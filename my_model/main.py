@@ -82,12 +82,12 @@ def main():
     imgpath = select_image()
     image1 = cv2.imread(imgpath)
     cv2.imshow('Selected Image', image1)
-    cv2.waitKey(0)
+    # cv2.waitKey(0)
     cv2.destroyAllWindows()
     photoPath = os.path.join(curr_dir, "Arrest", "Arrestpersons")
     for filename in os.listdir(photoPath):
         if filename.endswith('.jpg') or filename.endswith('.jpeg') or filename.endswith('.png'):
-            # print(filename)
+            print(filename)
             image2 = cv2.imread(os.path.join(photoPath, filename))
             imgmatch, score = matcher(image1, image2)
             if score > 0.9:
